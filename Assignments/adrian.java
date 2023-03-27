@@ -1,3 +1,4 @@
+package Assignments;
 public class adrian {
     public static void main(String[] args) {
         // create loop to print "hello george" 10 times

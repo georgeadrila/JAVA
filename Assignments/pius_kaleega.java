@@ -1,3 +1,4 @@
+package Assignments;
 import java.util.Scanner;
 public class pius_kaleega {
     public static void main(String[] args) {

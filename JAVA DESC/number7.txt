@@ -1,0 +1,34 @@
+final keyword:
+In Java, the final keyword is used to declare that a variable, method, or class cannot be modified or extended.
+When applied to a variable, it means the variable's value cannot be changed once assigned.
+When applied to a method, it means the method cannot be overridden by subclasses.
+When applied to a class, it means the class cannot be subclassed.
+Example usage:
+
+final int number = 10; // The value of 'number' cannot be modified.
+
+final class MyClass { // The class 'MyClass' cannot be extended.
+    // ...
+    final void myMethod() { // The method 'myMethod' cannot be overridden.
+        // ...
+    }
+}
+finally block:
+The finally block is used in exception handling alongside try and catch blocks.
+The code within the finally block is guaranteed to execute, whether an exception is thrown or not.
+It is typically used to perform cleanup actions or release resources that should always occur, regardless of exceptions.
+Example usage:
+
+try {
+    // Code that may throw an exception.
+} catch (Exception e) {
+    // Exception handling code.
+} finally {
+    // Code that always executes, regardless of exceptions.
+    // Cleanup actions or resource release can be performed here.
+}
+finalize() method:
+The finalize() method is a special method defined in the Object class.
+It is called by the garbage collector before an object is garbage collected (i.e., memory deallocation) to perform any necessary cleanup or resource releasing tasks.
+It is rarely used in modern Java programming, as it has limited control over when and if it will be invoked.
+It's recommended to use explicit resource management techniques like try-with-resources or implementing the Closeable interface for proper resource handling.

@@ -1,0 +1,94 @@
+In Java, a constructor is a special method used for initializing objects of a class. It is called automatically when an object is created using the `new` keyword. Constructors have the same name as the class they belong to and do not have a return type (not even `void`).
+
+There are three types of constructors in Java:
+
+1. Default Constructor:
+- A default constructor is automatically provided by the Java compiler if no constructor is explicitly defined in a class.
+- It has no parameters and performs no specific initialization tasks.
+- It initializes member variables to their default values (e.g., `0` for numeric types, `null` for objects, `false` for boolean).
+
+Example:
+class MyClass {
+    int number;
+    String name;
+    // MyClass() {}
+
+    void display() {
+        System.out.println("Number: " + number);
+        System.out.println("Name: " + name);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MyClass obj = new MyClass();
+        obj.display();
+    }
+}
+
+In the above example, the `MyClass` class implicitly has a default constructor provided by the compiler. The `Main` class creates an object of `MyClass` using the default constructor, and the `display()` method prints the member variable values, which are the default values.
+
+2. Parameterized Constructor:
+- A parameterized constructor is defined with one or more parameters to initialize the member variables of an object.
+- It allows for custom initialization of object properties based on the provided arguments.
+
+Example:
+
+class Person {
+    String name;
+    int age;
+
+    // Parameterized constructor
+    Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    void display() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Person person = new Person("John Doe", 25);
+        person.display();
+    }
+}
+
+In this example, the `Person` class has a parameterized constructor that takes the `name` and `age` as arguments. The constructor initializes the member variables of the object using the provided values. The `Main` class creates an object of `Person` using the parameterized constructor and displays the person's name and age.
+
+3. Copy Constructor:
+- A copy constructor is used to create a new object by copying the values of another object of the same class.
+- It allows for creating a new object with the same state as an existing object.
+
+Example:
+
+class Point {
+    int x;
+    int y;
+
+    // Copy constructor
+    Point(Point other) {
+        this.x = other.x;
+        this.y = other.y;
+    }
+
+    void display() {
+        System.out.println("X: " + x);
+        System.out.println("Y: " + y);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Point point1 = new Point();
+        point1.x = 10;
+        point1.y = 20;
+
+        Point point2 = new Point(point1); // Creating a new object using copy constructor
+        point2.display();
+    }
+}
+

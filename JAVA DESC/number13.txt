@@ -1,0 +1,44 @@
+1. length():
+- The `length()` function is a method available in the `String` class that returns the length (number of characters) of a string.
+- It is used to determine the size of a string.
+
+Example:
+
+String str = "Hello, World!";
+int length = str.length();
+System.out.println(length); // Output: 13
+
+
+2. charAt():
+- The `charAt()` function is a method available in the `String` class that returns the character at a specific index within a string.
+- It is used to access individual characters of a string.
+
+Example:
+
+String str = "Hello, World!";
+char ch = str.charAt(7);
+System.out.println(ch); // Output: W
+
+
+3. substring():
+- The `substring()` function is a method available in the `String` class that returns a new string extracted from a specified portion of an existing string.
+- It is used to extract a substring based on the starting and ending indices or just the starting index.
+
+Example:
+
+String str = "Hello, World!";
+String substring1 = str.substring(7); // Extracts from index 7 till the end
+System.out.println(substring1); // Output: World!
+
+String substring2 = str.substring(7, 12); // Extracts from index 7 to 11 (exclusive)
+System.out.println(substring2); // Output: World
+
+4. replace():
+- The `replace()` function is a method available in the `String` class that returns a new string with all occurrences of a specified character or sequence of characters replaced by another character or sequence of characters.
+- It is used to perform string substitution or replacement.
+
+Example:
+
+String str = "Hello, World!";
+String replacedStr = str.replace("Hello", "Hi");
+System.out.println(replacedStr); // Output: Hi, World!

@@ -1,0 +1,37 @@
+package Calc;
+
+import java.io.*;
+
+public class FileCopyWithComments {
+    public static void main(String[] args) {
+        String sourceFileName = "source.txt";
+        String destinationFileName = "destination.txt";
+        String authorName = "George Adrian";
+        String date = "2023-06-19";
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(sourceFileName));
+             BufferedWriter writer = new BufferedWriter(new FileWriter(destinationFileName))) {
+
+            // Write author name and date in comments at the beginning of the file
+            writer.write("/*\n");
+            writer.write(" * Author: " + authorName + "\n");
+            writer.write(" * Date: " + date + "\n");
+            writer.write(" */\n");
+
+            // Copy contents of the source file to the destination file
+            String line;
+            while ((line = reader.readLine()) != null) {
+                writer.write(line);
+                writer.newLine();
+            }
+
+            // Write comment at the end of the file
+            writer.write("// End of file");
+
+            System.out.println("File copied successfully.");
+
+        } catch (IOException e) {
+            System.out.println("An error occurred: " + e.getMessage());
+        }
+    }
+}

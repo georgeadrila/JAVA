@@ -1,0 +1,26 @@
+abstract class Animal {
+    String name;
+
+    abstract void sound(); // Abstract method
+
+    void sleep() { // Concrete method
+        System.out.println("Zzzz...");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Woof!");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.sound();
+        dog.sleep();
+    }
+}
+
+n the example, Animal is an abstract class that has an abstract method sound() and a concrete method sleep(). Since the Animal class is abstract, it cannot be instantiated directly. The Dog class extends the Animal class and provides an implementation for the sound() method. The Main class creates an object of Dog, demonstrates calling the sound() method, and also invokes the inherited sleep() method.

@@ -1,0 +1,35 @@
+// Public access modifier example
+public class PublicClass {
+    public void publicMethod() {
+        // Method accessible from any class or package
+    }
+}
+
+// Protected access modifier example
+public class ParentClass {
+    protected void protectedMethod() {
+        // Method accessible within the same package and subclasses
+    }
+}
+
+public class ChildClass extends ParentClass {
+    public void accessProtectedMethod() {
+        protectedMethod(); // Accessing protected method from subclass
+    }
+}
+
+// Default access modifier example
+class DefaultClass {
+    void defaultMethod() {
+        // Method accessible within the same package
+    }
+}
+
+// Private access modifier example
+public class PrivateClass {
+    private void privateMethod() {
+        // Method accessible within the same class
+    }
+}
+
+In the example above, PublicClass has a public access modifier, ParentClass has a protected access modifier, DefaultClass has a default access modifier (no explicit modifier), and PrivateClass has a private access modifier. Each class demonstrates the accessibility of their respective methods based on the specified access modifiers.

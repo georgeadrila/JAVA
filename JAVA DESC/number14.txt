@@ -1,0 +1,44 @@
+In Java, an exception is an event that occurs during the execution of a program and disrupts the normal flow of instructions. It represents an abnormal condition or error situation that requires special handling. Exceptions can occur due to various reasons, such as invalid inputs, resource unavailability, or unexpected behaviors.
+
+Java provides a built-in exception hierarchy with predefined exception classes, but you can also create your own user-defined exceptions by extending existing exception classes or by creating custom exception classes. Here's an example of creating a user-defined exception:
+
+
+class InvalidAgeException extends Exception {
+    InvalidAgeException(String message) {
+        super(message);
+    }
+}
+
+class Voter {
+    String name;
+    int age;
+
+    void register(String name, int age) throws InvalidAgeException {
+        if (age < 18) {
+            throw new InvalidAgeException("Invalid age. Must be 18 or above.");
+        }
+        this.name = name;
+        this.age = age;
+        System.out.println("Registration successful!");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Voter voter = new Voter();
+        try {
+            voter.register("John Doe", 16);
+        } catch (InvalidAgeException e) {
+            System.out.println("Registration failed: " + e.getMessage());
+        }
+    }
+}
+
+
+In the example above, we have created a user-defined exception called `InvalidAgeException` by extending the `Exception` class. The `InvalidAgeException` class has a constructor that accepts an error message and passes it to the superclass constructor using the `super` keyword.
+
+The `Voter` class has a `register` method that takes a name and age as parameters. If the age is less than 18, it throws the `InvalidAgeException` by creating a new instance of it with an appropriate error message.
+
+In the `Main` class, we create an instance of `Voter` and try to register a voter with an invalid age (16). We catch the `InvalidAgeException` and handle it by displaying a custom error message.
+
+User-defined exceptions allow you to create and handle specific exception scenarios that are relevant to your application or domain. They provide a way to add more meaningful and specific error handling in your code.

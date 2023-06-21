@@ -1,0 +1,7 @@
+int i = 1;
+while (i <= 5) {
+    System.out.println(i);
+    i++;
+}
+
+In this example, the loop starts with the variable i initialized to 1. The condition i <= 5 is checked before each iteration of the loop. As long as i is less than or equal to 5, the loop will continue to execute. Inside the loop, the current value of i is printed to the console using System.out.println(i). Finally, the value of i is incremented by 1 using the i++ shorthand for i = i + 1.
